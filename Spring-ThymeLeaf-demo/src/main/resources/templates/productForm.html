@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add a new Product</title>
+<link rel="stylesheet" type="text/css"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous"
+	th:href="@{/webjars/bootstrap/4.4.1/css/bootstrap.min.css}" />
+</head>
+<body>
+
+	<div class="container mt-2">
+		<h2>Product detail</h2>
+
+		<div class="row">
+			<div class="col-lg-6">
+				<form class="form-horizontal" th:object="${product}"
+					th:action="@{/product}" method="post">
+					<input type="hidden" th:field="*{id}" />
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Name:</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" th:field="*{name}" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Description:</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" th:field="*{description}" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Price:</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" th:field="*{price}" />
+						</div>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-success">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
