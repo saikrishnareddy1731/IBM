@@ -1,0 +1,1 @@
+insert into accounts(account_ID,account_type,account_balance)values('Datafile','saving',8000)
