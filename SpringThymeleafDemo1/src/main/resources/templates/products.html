@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Products List</title>
+
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+
+<script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+	th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+<link href="../static/css/spring-core.css"
+	th:href="@{css/spring-core.css}" rel="stylesheet" media="screen" />
+</head>
+
+<body>
+	<div class="container">
+		<div th:if="${not #lists.isEmpty(products)}">
+			<h2>Products List</h2>
+			<table class="table">
+				<tr>
+					<th>ID</th>
+					<th>Description</th>
+					<th>Price</th>
+					<th>URL</th>
+					<th>List</th>
+					<th>List</th>
+				</tr>
+				<tr th:each="product : ${products}" class="thead-dark">
+					<td th:text="${product.id}"></td>
+					<td th:text="${product.description}"></td>
+					<td th:text="${product.price}"></td>
+					<td th:text="${product.imageUrl}"></td>
+					<td><a th:href="${'/product/'+ product.id}">View</a></td>
+					<td><a th:href="${'/updateForm/'+product.id}">Edit</a>
+				</tr>
+			</table>
+
+		</div>
+		<div class="row">
+			<div class="col-sum-3">
+				<a href="/product/new">New Product</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
