@@ -11,11 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @EnableDiscoveryClient
 @RestController
-public class ServiceHiApplication {
+public class ServiceHiApplication 
+  {
 
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		SpringApplication.run(ServiceHiApplication.class, args);
 	}
+	
 	@Value("${server.port}")
 	String port;
 	@RequestMapping("/hi")

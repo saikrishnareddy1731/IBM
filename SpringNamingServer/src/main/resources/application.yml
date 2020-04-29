@@ -4,3 +4,13 @@ eureka:
     register-with-eureka: false
 server:
   port: 8761
+  
+  spring:
+  boot:
+    admin:
+      client:
+        url:
+        - http://localhost:1111
+        
+  application:
+    name: Eureka server
