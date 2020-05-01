@@ -1,0 +1,17 @@
+  
+server:
+  port: 8888
+spring:
+   boot:
+    admin:
+      client:
+        url: http://localhost:9999
+   application:
+    name: zuul-proxy
+   cloud:
+    consul:
+      discovery:
+        register: true
+        service-name: zuul-proxy
+      host: localhost
+      port: 8500
